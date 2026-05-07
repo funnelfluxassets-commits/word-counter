@@ -12,6 +12,8 @@
     <meta property="og:url" content="https://word-counter.funnelfluxassets.com">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://word-counter.funnelfluxassets.com/">
     <link rel="icon" type="image/png" href="assets/funnelfluxassets-favricon-500.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +30,19 @@
             --text-muted: #94a3b8;
             --gradient-highlight: linear-gradient(to right, #585efe, #9233EA);
             --success: #10b981;
+            --header-bg: #020617;
+            --footer-bg: #020617;
+        }
+
+        .light {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: rgba(146, 51, 234, 0.2);
+            --border-highlight: rgba(146, 51, 234, 0.6);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --header-bg: #f8fafc;
+            --footer-bg: #f8fafc;
         }
 
         * {
@@ -44,9 +59,163 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 8rem 3rem 5rem 3rem;
+            padding: 0;
             line-height: 1.5;
             position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Site Header */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text-white {
+            color: var(--text-main);
+        }
+
+        .logo-text-blue {
+            color: var(--primary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .ff-assets-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(88, 94, 254, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+        }
+
+        .ff-assets-btn:hover {
+            background: rgba(88, 94, 254, 0.2);
+            border-color: var(--primary);
+        }
+
+        .ff-assets-btn svg {
+            filter: drop-shadow(0 0 5px rgba(88, 94, 254, 0.5));
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .light .theme-toggle .sun-icon { display: block; }
+        .light .theme-toggle .moon-icon { display: none; }
+        .theme-toggle .sun-icon { display: none; }
+        .theme-toggle .moon-icon { display: block; }
+
+        /* Content Padding */
+        .content-wrapper {
+            padding-top: 70px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 5rem;
+        }
+
+        /* Site Footer */
+        .site-footer {
+            margin-top: auto;
+            width: 100%;
+            background: var(--footer-bg);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.8rem;
         }
 
         .logo-container {
@@ -242,26 +411,27 @@
 
         @media (max-width: 640px) {
             body {
-                padding: calc(3rem + 35px) 1.5rem 3rem 1.5rem;
+                padding: 0;
             }
 
-            .logo-container {
-                top: 0.75rem;
-                left: 0.75rem;
+            .site-header {
+                padding: 0 1rem;
             }
 
-            .logo-container img {
-                height: 65px;
+            .logo-img {
+                height: 30px;
             }
 
-            .hamburger {
-                top: 0.75rem;
-                right: 0.75rem;
+            .header-left {
+                gap: 0.5rem;
             }
 
-            .hamburger span {
-                width: 24px;
-                height: 2px;
+            .logo-text {
+                font-size: 1rem;
+            }
+
+            .ff-assets-btn span {
+                display: none;
             }
 
             header {
@@ -308,17 +478,29 @@
 
 <body>
 
-    <a href="https://funnelfluxassets.com" class="logo-container">
-        <img src="assets/logo.png" alt="FunnelFlux Assets">
-    </a>
+    <header class="site-header">
+        <a href="https://funnelfluxassets.com" class="header-left">
+            <img src="assets/logo.png" alt="WordCounter" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-white">Word</span><span class="logo-text-blue">Counter</span>
+            </div>
+        </a>
+        <div class="header-right">
+            <a href="https://funnelfluxassets.com" class="ff-assets-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>FUNNELFLUX ASSETS</span>
+            </a>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
 
-    <a href="https://funnelfluxassets.com" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </a>
-
-    <header>
+    <div class="content-wrapper">
+        <header>
         <h1>Word <span>Counter</span></h1>
         <p class="subtitle">Keep your work on track with our word counter. Instantly view word, character, and sentence counts to meet your writing requirements. Receive real-time feedback to ensure your work is clear and polished.</p>
     </header>
@@ -358,8 +540,49 @@
             </div>
         </div>
     </main>
+    </div>
+
+    <footer class="site-footer">
+        <a href="https://funnelfluxassets.com" class="ff-assets-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>FUNNELFLUX ASSETS</span>
+        </a>
+        <div class="footer-nav">
+            <a href="privacy-policy.html" class="footer-link">PRIVACY POLICY</a>
+            <a href="terms-of-service.html" class="footer-link">TERMS OF SERVICE</a>
+        </div>
+        <p class="copyright">© 2026 FunnelFlux Assets. All rights reserved.</p>
+    </footer>
 
     <script>
+        // Theme Management
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        function setTheme(isDark) {
+            if (isDark) {
+                html.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize Theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            setTheme(false);
+        } else {
+            setTheme(true);
+        }
+
+        themeToggle.onclick = () => {
+            setTheme(!html.classList.contains('light'));
+        };
+
         const textInput = document.getElementById('textInput');
         const results = document.getElementById('results');
 
@@ -400,12 +623,24 @@
             charWithSpacesEl.textContent = charWithSpaces.toLocaleString();
             sentenceCountEl.textContent = sentencesCount.toLocaleString();
             paraCountEl.textContent = paraCount.toLocaleString();
-            readingTimeEl.textContent = readingTime;
+readingTimeEl.textContent = readingTime;
         }
-
-        // Count on input change
-        textInput.addEventListener('input', countText);
     </script>
+    </div>
+
+    <footer class="site-footer">
+        <a href="https://funnelfluxassets.com" class="ff-assets-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>FUNNELFLUX ASSETS</span>
+        </a>
+        <div class="footer-nav">
+            <a href="privacy-policy.html" class="footer-link">PRIVACY POLICY</a>
+            <a href="terms-of-service.html" class="footer-link">TERMS OF SERVICE</a>
+        </div>
+        <p class="copyright">© 2026 FunnelFlux Assets. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

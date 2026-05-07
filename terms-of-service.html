@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | WordCounter</title>
+    <meta name="description" content="WordCounter Terms of Service - Read our terms and conditions for using the text analysis tool.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://word-counter.funnelfluxassets.com/terms-of-service.html">
+    <meta property="og:title" content="Terms of Service | WordCounter">
+    <meta property="og:description" content="WordCounter Terms of Service - Read our terms and conditions for using the text analysis tool.">
+    <meta property="og:url" content="https://word-counter.funnelfluxassets.com/terms-of-service.html">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="assets/funnelfluxassets-favricon-500.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #585efe;
+            --primary-glow: rgba(88, 94, 254, 0.5);
+            --bg: #020617;
+            --card-bg: #0c0e18;
+            --border: rgba(146, 51, 234, 0.4);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --header-bg: #020617;
+            --footer-bg: #020617;
+        }
+
+        .light {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: rgba(146, 51, 234, 0.2);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --header-bg: #f8fafc;
+            --footer-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .logo-text-white {
+            color: var(--text-main);
+        }
+
+        .logo-text-blue {
+            color: var(--primary);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .ff-assets-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(88, 94, 254, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+        }
+
+        .ff-assets-btn:hover {
+            background: rgba(88, 94, 254, 0.2);
+            border-color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .light .theme-toggle .sun-icon { display: block; }
+        .light .theme-toggle .moon-icon { display: none; }
+        .theme-toggle .sun-icon { display: none; }
+        .theme-toggle .moon-icon { display: block; }
+
+        .content-wrapper {
+            padding-top: 70px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 5rem;
+        }
+
+        .policy-card {
+            width: 100%;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 100px;
+            backdrop-filter: blur(20px);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .site-footer {
+            margin-top: auto;
+            width: 100%;
+            background: var(--footer-bg);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 640px) {
+            .policy-card { padding: 1.5rem; }
+            .ff-assets-btn span { display: none; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="index.html" class="header-left">
+            <img src="assets/logo.png" alt="WordCounter" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-text-white">Word</span><span class="logo-text-blue">Counter</span>
+            </div>
+        </a>
+        <div class="header-right">
+            <a href="https://funnelfluxassets.com" class="ff-assets-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+                <span>FUNNELFLUX ASSETS</span>
+            </a>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <main class="policy-card">
+            <a href="index.html" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back to WordCounter</span>
+            </a>
+
+            <h1>Terms of Service</h1>
+            <p>Last updated: May 07, 2026</p>
+
+            <p>Welcome to WordCounter. By using our website and text analysis services, you agree to comply with and be bound by the following terms and conditions.</p>
+
+            <h2>1. Use of Service</h2>
+            <p>WordCounter is provided as a free productivity tool for text analysis. You agree to use this service only for lawful purposes. You are strictly prohibited from using WordCounter to:</p>
+            <ul>
+                <li>Process text containing illegal or harmful content.</li>
+                <li>Attempt to exploit or breach the service in any way.</li>
+                <li>Use the service for any unlawful purpose.</li>
+            </ul>
+
+            <h2>2. Intellectual Property</h2>
+            <p>The WordCounter interface, brand, and underlying technology are the property of FunnelFlux Assets. You retain all rights to the text you analyze using our service.</p>
+
+            <h2>3. Disclaimer of Warranties</h2>
+            <p>WordCounter is provided "as is" without any warranties, express or implied. While we strive for accurate results, we do not guarantee that the counts will be 100% accurate for all text types.</p>
+
+            <h2>4. Limitation of Liability</h2>
+            <p>FunnelFlux Assets shall not be liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the WordCounter service.</p>
+
+            <h2>5. Modifications to Terms</h2>
+            <p>We reserve the right to modify these terms at any time. Your continued use of the service after such changes constitutes your acceptance of the new terms.</p>
+
+            <h2>6. Governing Law</h2>
+            <p>These terms are governed by and construed in accordance with the laws of the jurisdiction in which FunnelFlux Assets operates.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about these Terms, please contact us at <a href="mailto:support@funnelfluxassets.com?subject=WordCounter%20-%20TOS%20Inquiry" style="color: var(--primary); text-decoration: none;">support@funnelfluxassets.com</a>.</p>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <a href="https://funnelfluxassets.com" class="ff-assets-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>FUNNELFLUX ASSETS</span>
+        </a>
+        <div class="footer-nav">
+            <a href="privacy-policy.html" class="footer-link">PRIVACY POLICY</a>
+            <a href="terms-of-service.html" class="footer-link">TERMS OF SERVICE</a>
+        </div>
+        <p class="copyright">© 2026 FunnelFlux Assets. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        function setTheme(isDark) {
+            if (isDark) {
+                html.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.add('light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            setTheme(false);
+        } else {
+            setTheme(true);
+        }
+
+        themeToggle.onclick = () => {
+            setTheme(!html.classList.contains('light'));
+        };
+    </script>
+</body>
+
+</html>
