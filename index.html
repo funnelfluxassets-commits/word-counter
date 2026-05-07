@@ -271,7 +271,7 @@
         /* How It Works Section */
         .how-to-section {
             width: 100%;
-            padding: 2rem 1.5rem 4rem 1.5rem;
+            padding: 2rem 1.5rem 5rem 1.5rem;
             box-sizing: border-box;
         }
 
@@ -306,13 +306,13 @@
                 font-size: 1.75rem;
             }
             .step-num {
-                font-size: 0.8rem;
+                font-size: 0.45rem;
             }
-        }
-
-        @media (max-width: 500px) {
-            .steps-grid {
-                grid-template-columns: 1fr;
+            .step-card h3 {
+                font-size: 1.1rem;
+            }
+            .step-card p {
+                font-size: 0.85rem;
             }
         }
 
@@ -361,11 +361,11 @@
             }
         }
 
-        @media (max-width: 500px) {
+@media (max-width: 500px) {
             .steps-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
+        }
             .how-to-section h2 {
                 font-size: 1.75rem;
             }
