@@ -31,11 +31,11 @@
             --success: #10b981;
             --header-bg: #ffffff;
             --footer-bg: #ffffff;
+            --dot-color: rgba(148, 163, 184, 0.2);
+            --spotlight-color: rgba(59, 130, 246, 0.3);
         }
 
         .dark {
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.5);
             --bg: #000000;
             --card-bg: #0A0A0A;
             --border: rgba(59, 130, 246, 0.4);
@@ -43,6 +43,8 @@
             --text-muted: #94a3b8;
             --header-bg: #000000;
             --footer-bg: #000000;
+            --dot-color: rgba(255, 255, 255, 0.12);
+            --spotlight-color: rgba(37, 99, 235, 0.6);
         }
 
         * {
@@ -62,6 +64,29 @@
             line-height: 1.5;
             position: relative;
             transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dot Grid Background */
+        .dot-grid {
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(circle, var(--dot-color) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            background-attachment: fixed;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .dot-grid::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, var(--spotlight-color) 2px, transparent 2px);
+            background-size: 32px 32px;
+            mask-image: radial-gradient(circle 145px at var(--mouse-x, -100%) var(--mouse-y, -100%), black 0%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle 145px at var(--mouse-x, -100%) var(--mouse-y, -100%), black 0%, transparent 100%);
+            z-index: -1;
         }
 
         /* Site Header */
@@ -409,6 +434,8 @@
 
 <body>
 
+    <div class="dot-grid"></div>
+
     <header class="site-header">
         <a href="https://funnelfluxassets.com" class="header-left">
             <img src="assets/logo.png" alt="WordCounter" class="logo-img">
@@ -488,6 +515,12 @@
     </footer>
 
     <script>
+        // Spotlight Effect
+        window.addEventListener('mousemove', (e) => {
+            document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
+            document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
+        });
+
         // Theme Management
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
@@ -528,28 +561,20 @@
         function countText() {
             const text = textInput.value;
 
-            // Words count
             const words = text.trim() ? text.trim().split(/\s+/).filter(word => word.length > 0) : [];
             const wordsCount = words.length;
 
-            // Characters without spaces
             const charNoSpaces = text.replace(/\s/g, '').length;
-
-            // Characters with spaces
             const charWithSpaces = text.length;
 
-            // Sentences count
             const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
             const sentencesCount = text.trim() ? Math.max(1, sentences.length) : 0;
 
-            // Paragraphs count
             const paragraphs = text.split(/\n\s*\n/).filter(p => p.trim().length > 0);
             const paraCount = text.trim() ? Math.max(1, paragraphs.length) : 0;
 
-            // Reading time (average 200 words per minute)
             const readingTime = wordsCount > 0 ? Math.ceil(wordsCount / 200) : 0;
 
-            // Update display
             wordCountEl.textContent = wordsCount.toLocaleString();
             charNoSpacesEl.textContent = charNoSpaces.toLocaleString();
             charWithSpacesEl.textContent = charWithSpaces.toLocaleString();
@@ -558,7 +583,6 @@
             readingTimeEl.textContent = readingTime;
         }
 
-        // Count on input change
         textInput.addEventListener('input', countText);
     </script>
 </body>
