@@ -27,6 +27,7 @@
             --text-muted: #64748b;
             --header-bg: #ffffff;
             --footer-bg: #ffffff;
+            --dot-color: rgba(148, 163, 184, 0.2);
         }
 
         .dark {
@@ -39,6 +40,18 @@
             --text-muted: #94a3b8;
             --header-bg: #000000;
             --footer-bg: #000000;
+            --dot-color: rgba(255, 255, 255, 0.12);
+        }
+
+        /* Dot Grid Background */
+        .dot-grid {
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(circle, var(--dot-color) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            background-attachment: fixed;
+            pointer-events: none;
+            z-index: -1;
         }
 
         * {
@@ -266,8 +279,10 @@
         }
     </style>
 </head>
-
 <body>
+
+    <div class="dot-grid"></div>
+
     <header class="site-header">
         <a href="index.html" class="header-left">
             <img src="assets/funnelfluxassets-favricon-500.png" alt="WordCounter" class="logo-img">
