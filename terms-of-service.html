@@ -28,6 +28,7 @@
             --header-bg: #ffffff;
             --footer-bg: #ffffff;
             --dot-color: rgba(148, 163, 184, 0.2);
+            --spotlight-color: rgba(59, 130, 246, 0.3);
         }
 
         .dark {
@@ -41,6 +42,7 @@
             --header-bg: #000000;
             --footer-bg: #000000;
             --dot-color: rgba(255, 255, 255, 0.12);
+            --spotlight-color: rgba(37, 99, 235, 0.6);
         }
 
         /* Dot Grid Background */
@@ -51,6 +53,18 @@
             background-size: 32px 32px;
             background-attachment: fixed;
             pointer-events: none;
+            z-index: -1;
+        }
+
+        .dot-grid::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, var(--spotlight-color) 2px, transparent 2px);
+            background-size: 32px 32px;
+            mask-image: radial-gradient(circle 145px at var(--mouse-x, -100%) var(--mouse-y, -100%), black 0%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle 145px at var(--mouse-x, -100%) var(--mouse-y, -100%), black 0%, transparent 100%);
             z-index: -1;
         }
 
@@ -362,6 +376,13 @@
     </footer>
 
     <script>
+        // Spotlight Effect
+        window.addEventListener('mousemove', (e) => {
+            document.body.style.setProperty('--mouse-x', `${e.clientX}px`);
+            document.body.style.setProperty('--mouse-y', `${e.clientY}px`);
+        });
+
+        // Theme Management
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
 
