@@ -53,6 +53,13 @@
             padding: 0;
         }
 
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Outfit', sans-serif;
             background-color: var(--bg);
@@ -94,8 +101,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            max-width: 100%;
+            width: 100%;
+            min-width: 100%;
             height: 70px;
             background: var(--header-bg);
             border-bottom: 1px solid var(--border);
@@ -103,12 +110,11 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 2rem;
-            padding-left: max(2rem, calc(100vw - 100%)/2);
-            padding-right: max(2rem, calc(100vw - 100%)/2);
             z-index: 1000;
             backdrop-filter: blur(10px);
             transition: background-color 0.3s ease;
             box-sizing: border-box;
+            margin: 0;
         }
 
         .header-left {
