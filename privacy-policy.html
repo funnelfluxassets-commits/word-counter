@@ -18,25 +18,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #585efe;
-            --primary-glow: rgba(88, 94, 254, 0.5);
-            --bg: #020617;
-            --card-bg: #0c0e18;
-            --border: rgba(146, 51, 234, 0.4);
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
-            --header-bg: #020617;
-            --footer-bg: #020617;
-        }
-
-        .light {
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.5);
             --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --border: rgba(146, 51, 234, 0.2);
+            --card-bg: #F4F9FF;
+            --border: rgba(59, 130, 246, 0.3);
             --text-main: #0f172a;
             --text-muted: #64748b;
-            --header-bg: #f8fafc;
-            --footer-bg: #f8fafc;
+            --header-bg: #ffffff;
+            --footer-bg: #ffffff;
+        }
+
+        .dark {
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.5);
+            --bg: #000000;
+            --card-bg: #0A0A0A;
+            --border: rgba(59, 130, 246, 0.4);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --header-bg: #000000;
+            --footer-bg: #000000;
         }
 
         * {
@@ -113,7 +115,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: rgba(88, 94, 254, 0.1);
+            background: rgba(59, 130, 246, 0.1);
             border: 1px solid var(--border);
             border-radius: 8px;
             color: var(--primary);
@@ -125,7 +127,7 @@
         }
 
         .ff-assets-btn:hover {
-            background: rgba(88, 94, 254, 0.2);
+            background: rgba(59, 130, 246, 0.2);
             border-color: var(--primary);
         }
 
