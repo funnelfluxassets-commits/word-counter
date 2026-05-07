@@ -157,8 +157,8 @@
             fill: currentColor;
         }
 
-        .light .theme-toggle .sun-icon { display: block; }
-        .light .theme-toggle .moon-icon { display: none; }
+        .dark .theme-toggle .sun-icon { display: block; }
+        .dark .theme-toggle .moon-icon { display: none; }
         .theme-toggle .sun-icon { display: none; }
         .theme-toggle .moon-icon { display: block; }
 
@@ -354,10 +354,10 @@
 
         function setTheme(isDark) {
             if (isDark) {
-                html.classList.remove('light');
+                html.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
             } else {
-                html.classList.add('light');
+                html.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
             }
         }
@@ -370,7 +370,7 @@
         }
 
         themeToggle.onclick = () => {
-            setTheme(!html.classList.contains('light'));
+            setTheme(!html.classList.contains('dark'));
         };
     </script>
 </body>
